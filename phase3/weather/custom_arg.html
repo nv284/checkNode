@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Custom callback</h1>
+        <script type="text/javascript">
+            function processThis(message, callback) {
+                console.log(
+                  "Running function first with message: "
+                  + message);
+      
+                if (typeof callback == "function")
+                    callback(9, "Hello!");
+            }
+      
+            function callbackFunction(num, str) {
+                console.log("Running callback function next");
+                console.log("num value is: " + num);
+                console.log("str value is: " + str);
+            }
+      
+            processThis("Hello" , callbackFunction);
+            </script>
+    </body>
+</html>
